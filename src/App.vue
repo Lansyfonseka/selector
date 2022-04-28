@@ -2,7 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
-import Select from './components/Select.vue';
+import Select from './components/Select/Select.vue';
 </script>
 
 <template>
@@ -11,7 +11,16 @@ import Select from './components/Select.vue';
     msg="Hello Vue 3 + Vite"
     v-bind:search="false"
   />
-  <Select></Select>
+  <Select
+    :items="['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',
+    '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']"
+    :dark="false"
+    :multiSelect="true"
+    :search="true"
+    :title="'Choose you action'"
+    :maxItems="20"
+  >
+  </Select>
 </template>
 
 <style>

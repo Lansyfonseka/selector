@@ -81,7 +81,11 @@ export default {
       this.filtred = this.items.filter(e => reg.test(e)).slice(0,this.maxItems);
     },
     closeSelect(){
-      this.isActive = false
+      this.isActive = false;
+      if (!this.isActive && this.selected.length)
+        this.filtred = this.selected;
+      else
+        this.filtred = this.items.slice(0,this.maxItems)
     },
     colorQuerry(string){
       const reg = new RegExp(this.querry, 'ig');
